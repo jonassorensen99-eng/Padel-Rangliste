@@ -1,0 +1,150 @@
+/* ========================================
+   PADEL RANGLISTE - Komponenter stylesheet
+   Indeholder: kort, tabeller, badges
+   ======================================== */
+
+/* --- Feature-kort --- */
+.kort-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.kort {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kort:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.kort-ikon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+
+.kort h3 {
+    font-size: 1.2rem;
+    color: #1B5E20;
+    margin-bottom: 10px;
+}
+
+.kort p {
+    color: #757575;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Trin-sektion --- */
+.trin-liste {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trin {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.trin-nummer {
+    background-color: #1B5E20;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.trin-tekst h3 {
+    font-size: 1.2rem;
+    color: #1B5E20;
+    margin-bottom: 8px;
+}
+
+.trin-tekst p {
+    color: #757575;
+    line-height: 1.7;
+}
+
+/* --- Ranglistetabel --- */
+.tabel-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+thead {
+    background-color: #1B5E20;
+    color: #fff;
+}
+
+thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e8f5e9;
+    transition: background-color 0.15s;
+}
+
+tbody tr:hover { background-color: #e8f5e9; }
+tbody tr:last-child { border-bottom: none; }
+
+tbody td {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+}
+
+.placering {
+    font-weight: 700;
+    color: #1B5E20;
+    font-size: 1.1rem;
+    width: 60px;
+}
+
+.top-1 { color: #F9A825; font-size: 1.3rem; }
+.top-2 { color: #9E9E9E; font-size: 1.2rem; }
+.top-3 { color: #795548; font-size: 1.15rem; }
+
+.point-badge {
+    background-color: #e8f5e9;
+    color: #1B5E20;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- Responsiv --- */
+@media (max-width: 768px) {
+    .trin { flex-direction: column; gap: 12px; }
+    .kort-grid { grid-template-columns: 1fr; }
+}

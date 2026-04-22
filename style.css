@@ -1,0 +1,272 @@
+/* ========================================
+   PADEL RANGLISTE - Generelt stylesheet
+   Indeholder: layout, navigation, footer,
+   typografi og grundlæggende farver
+   ======================================== */
+
+/* --- Grundlæggende reset & variabler --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --groen: #1B5E20;
+    --groen-lys: #2E7D32;
+    --groen-meget-lys: #e8f5e9;
+    --gul: #F9A825;
+    --hvid: #ffffff;
+    --lys-graa: #f5f5f5;
+    --graa: #757575;
+    --moerk-graa: #212121;
+    --skygge: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    color: var(--moerk-graa);
+    background-color: var(--lys-graa);
+    line-height: 1.6;
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: var(--groen);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--skygge);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 16px 0;
+}
+
+.nav-logo-tekst {
+    color: var(--hvid);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-logo-tekst span {
+    color: var(--gul);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: var(--hvid);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+    display: block;
+}
+
+.nav-links li a:hover {
+    background-color: var(--groen-lys);
+}
+
+.nav-links li a.aktiv {
+    background-color: var(--gul);
+    color: var(--moerk-graa);
+    font-weight: 600;
+}
+
+.nav-links li a.login-knap {
+    background-color: var(--gul);
+    color: var(--moerk-graa);
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.nav-links li a.login-knap:hover {
+    background-color: #f57f17;
+    color: var(--hvid);
+}
+
+/* --- Hero-sektion (forsiden) --- */
+.hero {
+    background: linear-gradient(135deg, var(--groen) 0%, var(--groen-lys) 100%);
+    color: var(--hvid);
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--gul);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    opacity: 0.9;
+}
+
+/* --- Sidetitel (undersider) --- */
+.side-hero {
+    background: linear-gradient(135deg, var(--groen) 0%, var(--groen-lys) 100%);
+    color: var(--hvid);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.side-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.side-hero p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Knapper --- */
+.knap {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.knap-primær {
+    background-color: var(--gul);
+    color: var(--moerk-graa);
+}
+
+.knap-primær:hover {
+    background-color: #f57f17;
+    color: var(--hvid);
+    transform: translateY(-2px);
+}
+
+.knap-sekundær {
+    background-color: transparent;
+    color: var(--hvid);
+    border: 2px solid var(--hvid);
+    margin-left: 12px;
+}
+
+.knap-sekundær:hover {
+    background-color: var(--hvid);
+    color: var(--groen);
+}
+
+/* --- Sektioner --- */
+section {
+    padding: 60px 40px;
+}
+
+.sektion-hvid { background-color: var(--hvid); }
+.sektion-graa  { background-color: var(--lys-graa); }
+.sektion-groen { background-color: var(--groen); color: var(--hvid); }
+
+.sektion-titel {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--groen);
+}
+
+.sektion-groen .sektion-titel { color: var(--hvid); }
+
+.sektion-undertitel {
+    text-align: center;
+    color: var(--graa);
+    margin-bottom: 48px;
+    font-size: 1.05rem;
+}
+
+.sektion-groen .sektion-undertitel { color: rgba(255,255,255,0.8); }
+
+.indhold-max {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--moerk-graa);
+    color: var(--hvid);
+    padding: 48px 40px 24px;
+}
+
+.footer-indhold {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-kolonne h3 {
+    color: var(--gul);
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+.footer-kolonne p,
+.footer-kolonne a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer-kolonne a:hover { color: var(--gul); }
+
+.footer-bund {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 24px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+/* --- Responsiv (mobil) --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 16px 20px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+    .hero h1 { font-size: 2rem; }
+    section { padding: 40px 20px; }
+    .footer-indhold { grid-template-columns: 1fr; gap: 24px; }
+}

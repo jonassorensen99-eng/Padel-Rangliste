@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Rangliste – Book en bane</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .bane-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bane-kort {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .bane-header {
+            background: var(--groen);
+            color: #fff;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bane-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .bane-type {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .tider-liste {
+            padding: 16px 24px;
+        }
+
+        .tid-række {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .tid-række:last-child {
+            border-bottom: none;
+        }
+
+        .tid-label {
+            font-size: 0.95rem;
+            color: var(--moerk-graa);
+            font-weight: 500;
+        }
+
+        .tid-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ledig-knap {
+            background: var(--gul);
+            color: var(--moerk-graa);
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .ledig-knap:hover {
+            background: #f57f17;
+            color: #fff;
+        }
+
+        .optaget {
+            color: #bdbdbd;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .info-boks {
+            background: var(--groen-meget-lys);
+            border-left: 4px solid var(--groen);
+            border-radius: 6px;
+            padding: 20px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-boks h3 {
+            color: var(--groen);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .info-boks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-boks ul li {
+            color: #424242;
+            font-size: 0.95rem;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-boks ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--groen);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .bane-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <span class="nav-logo-tekst">Padel<span>Rangliste</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="om.html">Om os</a></li>
+            <li><a href="rangliste.html">Rangliste</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="traener.html">Find en træner</a></li>
+            <li><a href="booking.html" class="aktiv">Book en bane</a></li>
+            <li><a href="priser.html">Priser</a></li>
+            <li><a href="kom-i-gang.html">Kom i gang</a></li>
+            <li><a href="login.html" class="login-knap">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Side-hero -->
+    <div class="side-hero">
+        <h1>Book en bane</h1>
+        <p>Reservér en padelbane nemt og hurtigt – se ledige tider og book direkte</p>
+    </div>
+
+    <!-- Praktisk info -->
+    <section class="sektion-hvid">
+        <div class="indhold-max">
+            <div class="info-boks">
+                <h3>Praktisk information</h3>
+                <ul>
+                    <li>Baner kan bookes op til 7 dage frem</li>
+                    <li>Afbud skal meldes senest 24 timer før – ellers opkræves fuld pris</li>
+                    <li>Hver booking er på 60 minutter</li>
+                    <li>Du skal være logget ind for at gennemføre en booking</li>
+                    <li>Betaling sker online ved booking med kort eller MobilePay</li>
+                    <li>Ketcherleje kan tilkøbes i receptionen (50 kr.)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tilgængelige baner -->
+    <section class="sektion-graa">
+        <div class="indhold-max">
+            <h2 class="sektion-titel">Ledige tider – i dag</h2>
+            <p class="sektion-undertitel">Vælg bane og tidspunkt – klik "Book" for at reservere</p>
+
+            <div class="bane-grid">
+
+                <!-- Bane 1 -->
+                <div class="bane-kort">
+                    <div class="bane-header">
+                        <h3>Bane 1</h3>
+                        <span class="bane-type">Indendørs</span>
+                    </div>
+                    <div class="tider-liste">
+                        <div class="tid-række">
+                            <span class="tid-label">07:00 – 08:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">08:00 – 09:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">09:00 – 10:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">10:00 – 11:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">11:00 – 12:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">12:00 – 13:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">13:00 – 14:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">14:00 – 15:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">15:00 – 16:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">16:00 – 17:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">17:00 – 18:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">18:00 – 19:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">19:00 – 20:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">20:00 – 21:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">21:00 – 22:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bane 2 -->
+                <div class="bane-kort">
+                    <div class="bane-header">
+                        <h3>Bane 2</h3>
+                        <span class="bane-type">Indendørs</span>
+                    </div>
+                    <div class="tider-liste">
+                        <div class="tid-række">
+                            <span class="tid-label">07:00 – 08:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">08:00 – 09:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">09:00 – 10:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">10:00 – 11:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">11:00 – 12:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">12:00 – 13:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">13:00 – 14:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">14:00 – 15:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">15:00 – 16:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">16:00 – 17:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">17:00 – 18:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">18:00 – 19:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">19:00 – 20:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">20:00 – 21:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">21:00 – 22:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bane 3 -->
+                <div class="bane-kort">
+                    <div class="bane-header">
+                        <h3>Bane 3</h3>
+                        <span class="bane-type">Udendørs</span>
+                    </div>
+                    <div class="tider-liste">
+                        <div class="tid-række">
+                            <span class="tid-label">07:00 – 08:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">08:00 – 09:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">09:00 – 10:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">10:00 – 11:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">11:00 – 12:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">12:00 – 13:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">13:00 – 14:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">14:00 – 15:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">15:00 – 16:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">16:00 – 17:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">17:00 – 18:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">18:00 – 19:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">19:00 – 20:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">20:00 – 21:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">21:00 – 22:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bane 4 -->
+                <div class="bane-kort">
+                    <div class="bane-header">
+                        <h3>Bane 4</h3>
+                        <span class="bane-type">Udendørs</span>
+                    </div>
+                    <div class="tider-liste">
+                        <div class="tid-række">
+                            <span class="tid-label">07:00 – 08:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">08:00 – 09:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">09:00 – 10:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">10:00 – 11:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">11:00 – 12:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">12:00 – 13:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">13:00 – 14:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">14:00 – 15:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">15:00 – 16:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">16:00 – 17:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">17:00 – 18:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">18:00 – 19:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">19:00 – 20:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">20:00 – 21:00</span>
+                            <div class="tid-status"><span class="optaget">Optaget</span></div>
+                        </div>
+                        <div class="tid-række">
+                            <span class="tid-label">21:00 – 22:00</span>
+                            <div class="tid-status"><a href="login.html" class="ledig-knap">Book</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Priser -->
+    <section class="sektion-hvid">
+        <div class="indhold-max">
+            <h2 class="sektion-titel">Priser for baneleje</h2>
+            <p class="sektion-undertitel">Simple og gennemskuelige priser – ingen skjulte gebyrer</p>
+
+            <div class="kort-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="kort">
+                    <div class="kort-ikon">☀️</div>
+                    <h3>Dagtid</h3>
+                    <p style="font-size: 1.4rem; font-weight: 800; color: var(--groen); margin: 12px 0;">150 kr.</p>
+                    <p>pr. time · Man–fre kl. 07–15</p>
+                </div>
+                <div class="kort">
+                    <div class="kort-ikon">🌆</div>
+                    <h3>Eftermiddag</h3>
+                    <p style="font-size: 1.4rem; font-weight: 800; color: var(--groen); margin: 12px 0;">200 kr.</p>
+                    <p>pr. time · Man–fre kl. 15–22</p>
+                </div>
+                <div class="kort">
+                    <div class="kort-ikon">🎉</div>
+                    <h3>Weekend</h3>
+                    <p style="font-size: 1.4rem; font-weight: 800; color: var(--groen); margin: 12px 0;">225 kr.</p>
+                    <p>pr. time · Lør–søn kl. 08–20</p>
+                </div>
+                <div class="kort">
+                    <div class="kort-ikon">🎾</div>
+                    <h3>Ketcherleje</h3>
+                    <p style="font-size: 1.4rem; font-weight: 800; color: var(--groen); margin: 12px 0;">50 kr.</p>
+                    <p>pr. ketcher · Betales i receptionen</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="priser.html" class="knap knap-primær" style="color: var(--moerk-graa);">Se alle priser og pakker</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="sektion-groen">
+        <div class="indhold-max" style="text-align: center;">
+            <h2 class="sektion-titel">Klar til at spille?</h2>
+            <p class="sektion-undertitel">Log ind og book din bane på under 2 minutter</p>
+            <a href="login.html" class="knap knap-primær">Log ind og book</a>
+            <a href="kom-i-gang.html" class="knap knap-sekundær">Ny bruger? Kom i gang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-indhold">
+            <div class="footer-kolonne">
+                <h3>PadelRangliste</h3>
+                <p>Danmarks sjoveste padel-fællesskab. Konkurrér, lær og nyd spillet.</p>
+            </div>
+            <div class="footer-kolonne">
+                <h3>Hurtige links</h3>
+                <a href="index.html">Forside</a>
+                <a href="rangliste.html">Rangliste</a>
+                <a href="traener.html">Find en træner</a>
+                <a href="booking.html">Book en bane</a>
+                <a href="events.html">Events</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-kolonne">
+                <h3>Kontakt</h3>
+                <p>Padel Center Aarhus</p>
+                <p>Idrætsvej 12, 8000 Aarhus</p>
+                <p>kontakt@padelrangliste.dk</p>
+                <p>+45 70 20 30 40</p>
+            </div>
+        </div>
+        <div class="footer-bund">
+            <p>&copy; 2026 PadelRangliste. Alle rettigheder forbeholdes.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

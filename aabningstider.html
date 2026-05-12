@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Rangliste – Åbningstider</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        /* --- Åbningstider-specifikke styles --- */
+        .tider-tabel {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .tider-raekke {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 28px;
+            border-bottom: 1px solid #e8f5e9;
+            font-size: 1rem;
+        }
+
+        .tider-raekke:last-child {
+            border-bottom: none;
+        }
+
+        .tider-raekke.header {
+            background-color: #1B5E20;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .tider-raekke:not(.header):nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .dag-navn {
+            font-weight: 600;
+            color: #212121;
+        }
+
+        .aaben-tid {
+            color: #1B5E20;
+            font-weight: 600;
+        }
+
+        .lukket {
+            color: #e53935;
+            font-weight: 600;
+        }
+
+        .weekend-badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #1B5E20;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-kort {
+            background: #fff;
+            border-radius: 10px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #1B5E20;
+        }
+
+        .info-ikon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .info-kort h3 {
+            font-size: 1.05rem;
+            color: #1B5E20;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .info-kort p {
+            color: #757575;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .tider-raekke {
+                padding: 14px 18px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <span class="nav-logo-tekst">Padel<span>Rangliste</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="om.html">Om os</a></li>
+            <li><a href="rangliste.html">Rangliste</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="traener.html">Find en træner</a></li>
+            <li><a href="booking.html">Book en bane</a></li>
+            <li><a href="aabningstider.html" class="aktiv">Åbningstider</a></li>
+            <li><a href="login.html" class="login-knap">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Side-hero -->
+    <div class="side-hero">
+        <h1>Åbningstider</h1>
+        <p>Se hvornår Padel Center Aarhus har åbent – og planlæg din næste kamp</p>
+    </div>
+
+    <!-- Ugentlige åbningstider -->
+    <section class="sektion-hvid">
+        <div class="indhold-max">
+            <h2 class="sektion-titel">Ugentlige åbningstider</h2>
+            <p class="sektion-undertitel">Padel Center Aarhus – Idrætsvej 12, 8000 Aarhus</p>
+
+            <div class="tider-tabel">
+                <div class="tider-raekke header">
+                    <span>Dag</span>
+                    <span>Åbningstid</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Mandag</span>
+                    <span class="aaben-tid">07:00 – 22:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Tirsdag</span>
+                    <span class="aaben-tid">07:00 – 22:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Onsdag</span>
+                    <span class="aaben-tid">07:00 – 22:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Torsdag</span>
+                    <span class="aaben-tid">07:00 – 22:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Fredag</span>
+                    <span class="aaben-tid">07:00 – 21:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Lørdag <span class="weekend-badge">Weekend</span></span>
+                    <span class="aaben-tid">08:00 – 20:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Søndag <span class="weekend-badge">Weekend</span></span>
+                    <span class="aaben-tid">09:00 – 18:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helligdage & særlige dage -->
+    <section class="sektion-graa">
+        <div class="indhold-max">
+            <h2 class="sektion-titel">Helligdage & særlige åbningstider</h2>
+            <p class="sektion-undertitel">Vi holder reducerede åbningstider på følgende dage</p>
+
+            <div class="tider-tabel">
+                <div class="tider-raekke header">
+                    <span>Dag</span>
+                    <span>Åbningstid</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Nytårsdag (1. jan)</span>
+                    <span class="aaben-tid">12:00 – 18:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Påskelørdag</span>
+                    <span class="aaben-tid">09:00 – 17:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Påskedag & 2. påskedag</span>
+                    <span class="lukket">Lukket</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Kristi Himmelfartsdag</span>
+                    <span class="aaben-tid">10:00 – 18:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Pinsedag & 2. pinsedag</span>
+                    <span class="lukket">Lukket</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Juleaften (24. dec)</span>
+                    <span class="aaben-tid">08:00 – 14:00</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">1. & 2. juledag</span>
+                    <span class="lukket">Lukket</span>
+                </div>
+                <div class="tider-raekke">
+                    <span class="dag-navn">Nytårsaften (31. dec)</span>
+                    <span class="aaben-tid">08:00 – 16:00</span>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 24px; color: #757575; font-size: 0.95rem;">
+                * Ændringer i åbningstider annonceres løbende på hjemmesiden og vores sociale medier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Praktisk info -->
+    <section class="sektion-hvid">
+        <div class="indhold-max">
+            <h2 class="sektion-titel">Praktisk information</h2>
+            <p class="sektion-undertitel">Alt du skal vide, inden du møder op</p>
+
+            <div class="info-grid">
+                <div class="info-kort">
+                    <div class="info-ikon">🎾</div>
+                    <h3>Udstyrsleje</h3>
+                    <p>Padelbat og bolde kan lejes i receptionen. Bat koster 30 kr./time og bolde koster 20 kr. pr. rør.</p>
+                </div>
+                <div class="info-kort">
+                    <div class="info-ikon">🅿️</div>
+                    <h3>Parkering</h3>
+                    <p>Gratis parkering direkte ved centret. Parkering er tilgængelig i åbningstiden – op til 3 timer ad gangen.</p>
+                </div>
+                <div class="info-kort">
+                    <div class="info-ikon">🚿</div>
+                    <h3>Omklædning & bad</h3>
+                    <p>Centret har separate omklædningsrum og brusefaciliteter til damer og herrer – fri adgang for alle spillere.</p>
+                </div>
+                <div class="info-kort">
+                    <div class="info-ikon">☕</div>
+                    <h3>Café & forplejning</h3>
+                    <p>Vores café har åbent i hele åbningstiden. Vi tilbyder drikkevarer, snacks og friske sandwiches.</p>
+                </div>
+                <div class="info-kort">
+                    <div class="info-ikon">📞</div>
+                    <h3>Kontakt os</h3>
+                    <p>Ring til os på <strong>+45 70 20 30 40</strong> eller skriv til <strong>kontakt@padelrangliste.dk</strong> ved spørgsmål.</p>
+                </div>
+                <div class="info-kort">
+                    <div class="info-ikon">🎾</div>
+                    <h3>Book i god tid</h3>
+                    <p>Banerne er populære – særligt i aftentimerne og i weekenden. Book mindst 24 timer i forvejen for de bedste tider.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="sektion-groen">
+        <div class="indhold-max" style="text-align: center;">
+            <h2 class="sektion-titel">Klar til at spille?</h2>
+            <p class="sektion-undertitel">Book en bane og kom i gang – vi glæder os til at se dig</p>
+            <a href="booking.html" class="knap knap-primær">Book en bane</a>
+            <a href="traener.html" class="knap knap-sekundær">Find en træner</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-indhold">
+            <div class="footer-kolonne">
+                <h3>PadelRangliste</h3>
+                <p>Danmarks sjoveste padel-fællesskab. Konkurrér, lær og nyd spillet.</p>
+            </div>
+            <div class="footer-kolonne">
+                <h3>Hurtige links</h3>
+                <a href="index.html">Forside</a>
+                <a href="rangliste.html">Rangliste</a>
+                <a href="traener.html">Find en træner</a>
+                <a href="booking.html">Book en bane</a>
+                <a href="aabningstider.html">Åbningstider</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-kolonne">
+                <h3>Kontakt</h3>
+                <p>Padel Center Aarhus</p>
+                <p>Idrætsvej 12, 8000 Aarhus</p>
+                <p>kontakt@padelrangliste.dk</p>
+                <p>+45 70 20 30 40</p>
+            </div>
+        </div>
+        <div class="footer-bund">
+            <p>&copy; 2026 PadelRangliste. Alle rettigheder forbeholdes.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

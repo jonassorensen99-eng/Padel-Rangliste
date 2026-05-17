@@ -1,6 +1,6 @@
 # PadelRangliste – Teknisk dokumentation
 
-Webbaseret platform til håndtering af padelkampe, ranglister og banebooking for Padel Center Aarhus.
+Webbaseret platform til håndtering af padelkampe, ranglister og banebooking for Padel Centre.
 
 ---
 

@@ -63,10 +63,6 @@ Padel-Rangliste/
 └── README.md           # Teknisk dokumentation (denne fil)
 ```
 
-> **Bemærk:** `index.html` er standardnavnet for en hjemmesides startside. Webservere og browsere leder automatisk efter denne fil, når der navigeres til en mappe uden angivet filnavn.
-
----
-
 ## Sider
 
 ### `index.html` — Forside

@@ -26,7 +26,7 @@ PadelRangliste er en statisk HTML/CSS-hjemmeside uden brug af backend eller data
 - Finde og booke professionelle trænere
 - Læse om priser, åbningstider og konceptet bag platformen
 
-Projektet er udviklet som et skoleprojekt og fungerer udelukkende som en frontend-prototype.
+Projektet er udviklet som et studieprojekt og fungerer udelukkende som en prototype.
 
 ---
 
@@ -38,7 +38,7 @@ Projektet er udviklet som et skoleprojekt og fungerer udelukkende som en fronten
 | CSS3 | Styling, layout og responsivt design |
 | GitHub | Versionsstyring og repository-hosting |
 
-Der er ikke anvendt JavaScript, frameworks eller eksterne biblioteker. Al styling er skrevet fra bunden i projektets egne stylesheets.
+Der er ikke anvendt JavaScript, frameworks eller eksterne biblioteker. 
 
 ---
 

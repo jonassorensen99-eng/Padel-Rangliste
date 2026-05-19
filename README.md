@@ -183,4 +183,4 @@ Alle CSS-filer og interne links er relative, så projektet fungerer lokalt uden 
 
 ---
 
-*Projekt udviklet som del af et skoleprojekt · Padel Center Aarhus · 2026*
+*Hjemmeside udviklet som del af M6-projektet · 2026*

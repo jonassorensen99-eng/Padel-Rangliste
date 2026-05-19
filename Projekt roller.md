@@ -10,24 +10,24 @@ Formålet med dette dokument er at angive roller og ansvar.
      * Løbende evaluering af gennemførte arbejdsopgaver  
        * Udfordringer og sejre  
      * Sørger for at afholde møder (før og efter)  
-     * Til eksamen: Teamdynamik, teamstyring og optimering af samarbejdet  
+     * Teamdynamik, teamstyring og optimering af samarbejdet  
    - **Opgaver:**  
      * Sørge for at facilitere “Sprint Planning” og planlægger sprintmødet før selve sprintet.  
        * Tager noter undervejs (dokumentere mødet)  
        * Sikrer at de udvalgte opgaver er realistiske inden for tidsrammen.  
      * Sørger for at holde “Sprint Review” hvor vi samlet kigger på hvad der er blevet gjort og vurderer om vi tilfredse.  
-     * Afholder “Sprint Retrospective”: Her evaluerer I processen. I taler om, hvordan samarbejdet gik, hvad der var svært, og hvordan I kan arbejde smartere i næste sprint.
+     * Afholder “Sprint Retrospective”: Her evalueres processen. Der tales om, hvordan samarbejdet gik, hvad der var svært, og hvordan der kan arbejdes smartere i næste sprint.
 
 2. **Product owner: Mads**  
    - **Ansvar:**  
      * Holde styr på retning og overblik jævnfør eksamenskriterier  
      * Prioritering af opgaver  
        * Styrer Product backlog  
-     * Til eksamen: Rollen hjælper til at redegøre for overordnet procesorientering, prioritering af opgaver osv.  
+     * Rollen hjælper til at redegøre for overordnet procesorientering, prioritering af opgaver osv.  
    - **Opgaver:**  
      * Blive enig om et “Sprint Goal”  
        * Præsentere de vigtigste opgaver  
-       * I bliver enige om et Sprint Goal (f.eks. "Ved slutningen af dette sprint skal brugeren kunne oprette en profil og logge ind").
+       * Skabe enighed om et Sprint Goal (f.eks. "Ved slutningen af dette sprint skal brugeren kunne oprette en profil og logge ind").
 
 3. **Developers**  
    - **Ansvar: Alle**  
@@ -35,5 +35,5 @@ Formålet med dette dokument er at angive roller og ansvar.
      * Dem de øvrige roller tager stilling til  
    - **Opgaver:**  
      * Ud fra Sprint Goal kigges der på de øverste opgaver i product backloggen og vurdere hvor svære de er, og hvor meget tid vi har i dette sprint og udvælger ud fra dette de opgaver der skal laves, som tilføjes til “sprint backloggen”.  
-     * I bryder de store opgaver ned i mindre tekniske bidder og flytter dem over i jeres Sprint Backlog.
+     * De store opgaver brydes ned i mindre tekniske bidder og flytter dem over i jeres Sprint Backlog.
 
